@@ -6,84 +6,21 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 public class Controller {
 
     @FXML
     private AnchorPane rootPane;
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
-    private Button clear;
-
-    @FXML
-    private Button divide;
-
-    @FXML
-    private Button dot;
-
-    @FXML
-    private Button eight;
-
-    @FXML
-    private Button equal;
-
-    @FXML
-    private Button five;
-
-    @FXML
-    private Button four;
-
-    @FXML
     private TextField input;
 
     @FXML
-    private Button lbracket;
+    private Button equal, clear, divide, multiply, minus, plus, square, dot, lbracket, rbracket;
 
     @FXML
-    private Button minus;
+    private Button zero, one, two, three, four, five, six, seven, eight, nine;
 
-    @FXML
-    private Button multiply;
-
-    @FXML
-    private Button nine;
-
-    @FXML
-    private Button one;
-
-    @FXML
-    private Button plus;
-
-    @FXML
-    private Button rbracket;
-
-    @FXML
-    private Button seven;
-
-    @FXML
-    private Button six;
-
-    @FXML
-    private Button square;
-
-    @FXML
-    private Button three;
-
-    @FXML
-    private Button two;
-
-    @FXML
-    private Button zero;
-
-    Calculatioin calc = new Calculatioin();
+    Calculation calculate = new Calculation();
 
     @FXML
     public void initialize() {
@@ -113,16 +50,6 @@ public class Controller {
 
     private void handleKeyPressed(KeyEvent event) {
         switch (event.getCode()) {
-            case ENTER, EQUALS:
-                if (event.isShiftDown()) {
-                    onSymbolButtonClick("+");
-                } else {
-                    onEqualButtonClick();
-                }
-                break;
-            case BACK_SPACE, ESCAPE, DELETE:
-                onClearButtonClick();
-                break;
             case DIGIT1, NUMPAD1:
                 onNumberButtonClick(1);
                 break;
@@ -181,6 +108,16 @@ public class Controller {
                     onNumberButtonClick(0);
                 }
                 break;
+            case ENTER, EQUALS:
+                if (event.isShiftDown()) {
+                    onSymbolButtonClick("+");
+                } else {
+                    onEqualButtonClick();
+                }
+                break;
+            case BACK_SPACE, ESCAPE, DELETE:
+                onClearButtonClick();
+                break;
             case PLUS, ADD:
                 onSymbolButtonClick("+");
                 break;
@@ -193,44 +130,47 @@ public class Controller {
             case SLASH, DIVIDE:
                 onSymbolButtonClick("/");
                 break;
-            case DECIMAL:
+            case DECIMAL, SEPARATOR:
                 onSymbolButtonClick(".");
                 break;
         }
     }
 
     private void onNumberButtonClick(int number) {
-        calc.userData.add(number);
-        calc.calculationData.add(number);
-        input.setText(calc.userResult(calc.userData));
+        calculate.userData.add(number);
+        calculate.calculationData.add(number);
+        input.setText(calculate.userResult(calculate.userData));
     }
 
     private void onSymbolButtonClick(String symbol) {
-        calc.userData.add(symbol);
-        calc.calculationData.add(symbol);
-        input.setText(calc.userResult(calc.userData));
+        calculate.userData.add(symbol);
+        calculate.calculationData.add(symbol);
+        input.setText(calculate.userResult(calculate.userData));
     }
 
     private void onSquareButtonClick() {
         String userSquare = "^";
         String square = "**";
-        calc.userData.add(userSquare);
-        calc.calculationData.add(square);
-        input.setText(calc.userResult(calc.userData));
+        calculate.userData.add(userSquare);
+        calculate.calculationData.add(square);
+        input.setText(calculate.userResult(calculate.userData));
     }
 
     private void onClearButtonClick() {
-        calc.userData.clear();
-        calc.calculationData.clear();
-        input.setText(calc.userResult(calc.userData));
+        calculate.userData.clear();
+        calculate.calculationData.clear();
+        input.setText(calculate.userResult(calculate.userData));
     }
 
     private void onEqualButtonClick() {
-        String result = calc.calculate(calc.calculationData);
-        input.setText(result);
-        calc.userData.clear();
-        calc.calculationData.clear();
-        calc.userData.add(result);
-        calc.calculationData.add(result);
+        Object result = calculate.outcome(calculate.calculationData);
+        onClearButtonClick();
+        if (result == null) {
+            input.setText("");
+        } else {
+            calculate.userData.add(result);
+            calculate.calculationData.add(result);
+            input.setText(result.toString());
+        }
     }
 }

@@ -2,22 +2,25 @@ package calculator;
 
 import org.graalvm.polyglot.Context;
 import org.graalvm.polyglot.Engine;
-
 import java.util.ArrayList;
 
-public class Calculatioin {
+public class Calculation {
     ArrayList<Object> calculationData = new ArrayList<>();
     ArrayList<Object> userData = new ArrayList<>();
 
-    public String calculate(ArrayList<Object> data) {
-        Engine engine = Engine.newBuilder()
-                .option("engine.WarnInterpreterOnly", "false")
-                .build();
-        Context ctx = Context.newBuilder("js").engine(engine).build();
+    public Object outcome(ArrayList<Object> data) {
+        if (data.isEmpty() || data.getFirst() instanceof String)  {
+            return null;
+        } else {
+            Engine engine = Engine.newBuilder()
+                    .option("engine.WarnInterpreterOnly", "false")
+                    .build();
+            Context ctx = Context.newBuilder("js").engine(engine).build();
 
-        String result = toString(data);
+            String result = toString(data);
 
-        return String.valueOf(ctx.eval("js", result));
+            return ctx.eval("js", result);
+        }
     }
 
     public String toString(ArrayList<Object> list) {
@@ -26,6 +29,7 @@ public class Calculatioin {
             sb.append(item);
         }
         return sb.toString();
+
     }
 
     public String userResult(ArrayList<Object> data) {
