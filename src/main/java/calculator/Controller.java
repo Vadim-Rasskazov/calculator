@@ -15,7 +15,7 @@ public class Controller {
     private TextField input;
 
     @FXML
-    private Button equal, clear, divide, multiply, minus, plus, square, dot, lbracket, rbracket;
+    private Button equal, clear, divide, multiply, minus, plus, root, square, dot, lbracket, rbracket;
 
     @FXML
     private Button zero, one, two, three, four, five, six, seven, eight, nine;
@@ -28,7 +28,7 @@ public class Controller {
 
         equal.setOnAction(event -> onEqualButtonClick());
         clear.setOnAction(event -> onClearButtonClick());
-        square.setOnAction(event -> onSquareButtonClick());
+        root.setOnAction(event -> onRootButtonClick());
         zero.setOnAction(event -> onNumberButtonClick(0));
         one.setOnAction(event -> onNumberButtonClick(1));
         two.setOnAction(event -> onNumberButtonClick(2));
@@ -46,6 +46,7 @@ public class Controller {
         divide.setOnAction(event -> onSymbolButtonClick("/"));
         lbracket.setOnAction(event -> onSymbolButtonClick("("));
         rbracket.setOnAction(event -> onSymbolButtonClick(")"));
+        square.setOnAction(event -> onSymbolButtonClick("^"));
     }
 
     private void handleKeyPressed(KeyEvent event) {
@@ -82,7 +83,7 @@ public class Controller {
                 break;
             case DIGIT6:
                 if (event.isShiftDown()) {
-                    onSquareButtonClick();
+                    onSymbolButtonClick("^");
                 } else {
                     onNumberButtonClick(6);
                 }
@@ -148,9 +149,9 @@ public class Controller {
         input.setText(calculate.userResult(calculate.userData));
     }
 
-    private void onSquareButtonClick() {
-        String userSquare = "^";
-        String square = "**";
+    private void onRootButtonClick() {
+        String userSquare = "√";
+        String square = "";
         calculate.userData.add(userSquare);
         calculate.calculationData.add(square);
         input.setText(calculate.userResult(calculate.userData));

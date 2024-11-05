@@ -1,7 +1,7 @@
 package calculator;
 
-import org.graalvm.polyglot.Context;
-import org.graalvm.polyglot.Engine;
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
 import java.util.ArrayList;
 
 public class Calculation {
@@ -12,14 +12,14 @@ public class Calculation {
         if (data.isEmpty() || data.getFirst() instanceof String)  {
             return null;
         } else {
-            Engine engine = Engine.newBuilder()
-                    .option("engine.WarnInterpreterOnly", "false")
-                    .build();
-            Context ctx = Context.newBuilder("js").engine(engine).build();
-
             String result = toString(data);
-
-            return ctx.eval("js", result);
+            Expression expression = new ExpressionBuilder(result).build();
+            double preResult = expression.evaluate();
+            if (preResult == (int) preResult) {
+                return (int) preResult;
+            } else {
+                return preResult;
+            }
         }
     }
 
@@ -29,7 +29,6 @@ public class Calculation {
             sb.append(item);
         }
         return sb.toString();
-
     }
 
     public String userResult(ArrayList<Object> data) {

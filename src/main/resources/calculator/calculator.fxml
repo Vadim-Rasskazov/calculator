@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="360.0" style="-fx-background-color: #010F00;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.Controller">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="420.0" style="-fx-background-color: #010F00;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.Controller">
    <children>
       <TextField fx:id="input" disable="true" focusTraversable="false" prefHeight="60.0" prefWidth="335.0" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="286.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
          <font>
             <Font size="25.0" />
          </font>
       </TextField>
-      <Button fx:id="zero" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+      <Button fx:id="zero" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="0" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
          <font>
             <Font size="20.0" />
          </font>
@@ -21,97 +21,102 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="dot" alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="." textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="97.0">
+      <Button fx:id="dot" alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="." textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="91.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="plus" alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="+" textAlignment="CENTER" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="271.0" AnchorPane.rightAnchor="10.0">
+      <Button fx:id="plus" alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="+" textAlignment="CENTER" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="253.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="equal" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="=" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="271.0" AnchorPane.rightAnchor="10.0">
+      <Button fx:id="equal" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="75.0" stylesheets="@button.css" text="=" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="334.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="87.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="one" alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="1" textAlignment="CENTER" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="10.0">
+      <Button fx:id="one" alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="1" textAlignment="CENTER" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="10.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="two" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="2" textAlignment="CENTER" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="95.0">
+      <Button fx:id="two" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="2" textAlignment="CENTER" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="91.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="three" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="3" textAlignment="CENTER" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="184.0">
+      <Button fx:id="three" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="3" textAlignment="CENTER" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="172.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="minus" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="-" textAlignment="CENTER" AnchorPane.bottomAnchor="118.0" AnchorPane.leftAnchor="271.0" AnchorPane.rightAnchor="10.0">
+      <Button fx:id="minus" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="-" textAlignment="CENTER" AnchorPane.bottomAnchor="118.0" AnchorPane.leftAnchor="253.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="four" alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="4" textAlignment="CENTER" AnchorPane.bottomAnchor="118.0" AnchorPane.leftAnchor="10.0">
+      <Button fx:id="four" alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="4" textAlignment="CENTER" AnchorPane.bottomAnchor="118.0" AnchorPane.leftAnchor="10.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="five" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="5" textAlignment="CENTER" AnchorPane.bottomAnchor="118.0" AnchorPane.leftAnchor="97.0">
+      <Button fx:id="five" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="5" textAlignment="CENTER" AnchorPane.bottomAnchor="118.0" AnchorPane.leftAnchor="91.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="six" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="6" textAlignment="CENTER" AnchorPane.bottomAnchor="118.0" AnchorPane.leftAnchor="184.0">
+      <Button fx:id="six" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="6" textAlignment="CENTER" AnchorPane.bottomAnchor="118.0" AnchorPane.leftAnchor="172.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="multiply" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="x" textAlignment="CENTER" AnchorPane.bottomAnchor="172.0" AnchorPane.leftAnchor="271.0" AnchorPane.rightAnchor="10.0">
+      <Button fx:id="multiply" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="x" textAlignment="CENTER" AnchorPane.bottomAnchor="172.0" AnchorPane.leftAnchor="253.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="seven" alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="7" textAlignment="CENTER" AnchorPane.bottomAnchor="172.0" AnchorPane.leftAnchor="10.0">
+      <Button fx:id="seven" alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="7" textAlignment="CENTER" AnchorPane.bottomAnchor="172.0" AnchorPane.leftAnchor="10.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="eight" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="8" textAlignment="CENTER" AnchorPane.bottomAnchor="172.0" AnchorPane.leftAnchor="97.0">
+      <Button fx:id="eight" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="8" textAlignment="CENTER" AnchorPane.bottomAnchor="172.0" AnchorPane.leftAnchor="91.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="nine" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="9" textAlignment="CENTER" AnchorPane.bottomAnchor="172.0" AnchorPane.leftAnchor="184.0">
+      <Button fx:id="nine" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="9" textAlignment="CENTER" AnchorPane.bottomAnchor="172.0" AnchorPane.leftAnchor="172.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="divide" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="/" textAlignment="CENTER" AnchorPane.bottomAnchor="226.0" AnchorPane.leftAnchor="271.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="87.0">
+      <Button fx:id="divide" alignment="CENTER" focusTraversable="false" layoutX="253.0" layoutY="87.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="/" textAlignment="CENTER" AnchorPane.bottomAnchor="226.0" AnchorPane.leftAnchor="253.0" AnchorPane.topAnchor="87.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="clear" alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="C" textAlignment="CENTER" AnchorPane.bottomAnchor="226.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="87.0">
+      <Button fx:id="clear" alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="C" textAlignment="CENTER" AnchorPane.bottomAnchor="226.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="87.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="lbracket" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="(" textAlignment="CENTER" AnchorPane.bottomAnchor="226.0" AnchorPane.leftAnchor="97.0" AnchorPane.topAnchor="87.0">
+      <Button fx:id="lbracket" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="(" textAlignment="CENTER" AnchorPane.bottomAnchor="226.0" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="87.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="rbracket" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text=")" textAlignment="CENTER" AnchorPane.bottomAnchor="226.0" AnchorPane.leftAnchor="184.0" AnchorPane.topAnchor="87.0">
+      <Button fx:id="rbracket" alignment="CENTER" focusTraversable="false" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text=")" textAlignment="CENTER" AnchorPane.bottomAnchor="226.0" AnchorPane.leftAnchor="172.0" AnchorPane.topAnchor="87.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="square" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" stylesheets="@button.css" text="Xʸ" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="184.0">
+      <Button fx:id="square" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="Xʸ" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="253.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="root" alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="75.0" stylesheets="@button.css" text="√" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="172.0">
          <font>
             <Font size="20.0" />
          </font>
