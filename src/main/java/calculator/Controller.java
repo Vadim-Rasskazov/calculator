@@ -15,10 +15,10 @@ public class Controller {
     private TextField input;
 
     @FXML
-    private Button equal, clear, divide, multiply, minus, plus, root, square, dot, lbracket, rbracket;
+    private Button divide, multiply, minus, plus, root, square, dot, lbracket, rbracket, log, ln;
 
     @FXML
-    private Button zero, one, two, three, four, five, six, seven, eight, nine;
+    private Button zero, one, two, three, four, five, six, seven, eight, nine, clear, equal;
 
     Calculation calculate = new Calculation();
 
@@ -28,7 +28,6 @@ public class Controller {
 
         equal.setOnAction(event -> onEqualButtonClick());
         clear.setOnAction(event -> onClearButtonClick());
-        root.setOnAction(event -> onRootButtonClick());
         zero.setOnAction(event -> onNumberButtonClick(0));
         one.setOnAction(event -> onNumberButtonClick(1));
         two.setOnAction(event -> onNumberButtonClick(2));
@@ -47,6 +46,9 @@ public class Controller {
         lbracket.setOnAction(event -> onSymbolButtonClick("("));
         rbracket.setOnAction(event -> onSymbolButtonClick(")"));
         square.setOnAction(event -> onSymbolButtonClick("^"));
+        root.setOnAction(event -> onSymbolButtonClick("√"));
+        log.setOnAction(event -> onSymbolButtonClick("log"));
+        ln.setOnAction(event -> onSymbolButtonClick("ln"));
     }
 
     private void handleKeyPressed(KeyEvent event) {
@@ -146,14 +148,6 @@ public class Controller {
     private void onSymbolButtonClick(String symbol) {
         calculate.userData.add(symbol);
         calculate.calculationData.add(symbol);
-        input.setText(calculate.userResult(calculate.userData));
-    }
-
-    private void onRootButtonClick() {
-        String userSquare = "√";
-        String square = "";
-        calculate.userData.add(userSquare);
-        calculate.calculationData.add(square);
         input.setText(calculate.userResult(calculate.userData));
     }
 
