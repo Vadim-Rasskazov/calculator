@@ -118,7 +118,10 @@ public class Controller {
                     onEqualButtonClick();
                 }
                 break;
-            case BACK_SPACE, ESCAPE, DELETE:
+            case BACK_SPACE:
+                deleteLastCharacter();
+                break;
+            case ESCAPE, DELETE:
                 onClearButtonClick();
                 break;
             case PLUS, ADD:
@@ -158,7 +161,7 @@ public class Controller {
     }
 
     private void onEqualButtonClick() {
-        Object result = calculate.outcome(calculate.calculationData);
+        Object result = calculate.calculationResult(calculate.calculationData);
         onClearButtonClick();
         if (result == null) {
             input.setText("");
@@ -166,6 +169,16 @@ public class Controller {
             calculate.userData.add(result);
             calculate.calculationData.add(result);
             input.setText(result.toString());
+        }
+    }
+
+    private void deleteLastCharacter() {
+        if (calculate.userData.isEmpty()) {
+            input.setText("");
+        } else {
+            calculate.userData.removeLast();
+            calculate.calculationData.removeLast();
+            input.setText(calculate.userResult(calculate.userData));
         }
     }
 }

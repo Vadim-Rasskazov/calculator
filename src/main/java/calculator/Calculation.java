@@ -9,25 +9,6 @@ public class Calculation {
     ArrayList<Object> calculationData = new ArrayList<>();
     ArrayList<Object> userData = new ArrayList<>();
 
-    public Object outcome(ArrayList<Object> data) {
-        if (data.isEmpty() ||
-                (data.getFirst() instanceof String &&
-                        !data.getFirst().equals("√") &&
-                        !data.getFirst().equals("log") &&
-                        !data.getFirst().equals("ln"))) {
-            return null;
-        } else {
-            String result = calculationString(data);
-            Expression expression = new ExpressionBuilder(result).build();
-            double preResult = expression.evaluate();
-            if (preResult == (int) preResult) {
-                return (int) preResult;
-            } else {
-                return preResult;
-            }
-        }
-    }
-
     public String calculationString(ArrayList<Object> data) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < data.size(); i++) {
@@ -69,8 +50,22 @@ public class Calculation {
         for (Object item : data) {
             sb.append(item);
         }
-        System.out.print(sb);
         return sb.toString();
+    }
+
+    public Object calculationResult(ArrayList<Object> data) {
+        try {
+            String result = calculationString(data);
+            Expression expression = new ExpressionBuilder(result).build();
+            double preResult = expression.evaluate();
+            if (preResult == (int) preResult) {
+                return (int) preResult;
+            } else {
+                return preResult;
+            }
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     public String userString(ArrayList<Object> data) {
