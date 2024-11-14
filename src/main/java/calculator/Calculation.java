@@ -17,6 +17,12 @@ public class Calculation {
                 case "√" -> "sqrt(";
                 case "log" -> "log10(";
                 case "ln" -> "log(";
+                case "sin" -> "sin(";
+                case "cos" -> "cos(";
+                case "tan" -> "tan(";
+                case "asin" -> "asin(";
+                case "acos" -> "acos(";
+
                 default -> null;
             };
             if (functionName != null) {

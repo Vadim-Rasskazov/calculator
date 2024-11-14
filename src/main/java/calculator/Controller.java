@@ -15,10 +15,13 @@ public class Controller {
     private TextField input;
 
     @FXML
-    private Button divide, multiply, minus, plus, root, square, dot, lbracket, rbracket, log, ln;
+    private Button divide, multiply, minus, plus, root, square, dot, lbracket, rbracket, pi, log, ln;
 
     @FXML
     private Button zero, one, two, three, four, five, six, seven, eight, nine, clear, equal;
+
+    @FXML
+    private Button sin, cos, tan, asin, acos, atan;
 
     Calculation calculate = new Calculation();
 
@@ -47,8 +50,15 @@ public class Controller {
         rbracket.setOnAction(event -> onSymbolButtonClick(")"));
         square.setOnAction(event -> onSymbolButtonClick("^"));
         root.setOnAction(event -> onSymbolButtonClick("√"));
+        pi.setOnAction(event -> onSymbolButtonClick("pi"));
         log.setOnAction(event -> onSymbolButtonClick("log"));
         ln.setOnAction(event -> onSymbolButtonClick("ln"));
+        sin.setOnAction(event -> onSymbolButtonClick("sin"));
+        cos.setOnAction(event -> onSymbolButtonClick("cos"));
+        tan.setOnAction(event -> onSymbolButtonClick("tan"));
+        asin.setOnAction(event -> onSymbolButtonClick("asin"));
+        acos.setOnAction(event -> onSymbolButtonClick("acos"));
+        atan.setOnAction(event -> onSymbolButtonClick("atan"));
     }
 
     private void handleKeyPressed(KeyEvent event) {
