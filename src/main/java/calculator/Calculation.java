@@ -22,7 +22,7 @@ public class Calculation {
                 case "tan" -> "tan(";
                 case "asin" -> "asin(";
                 case "acos" -> "acos(";
-
+                case "atan" -> "atan(";
                 default -> null;
             };
             if (functionName != null) {
@@ -63,7 +63,7 @@ public class Calculation {
         try {
             String result = calculationString(data);
             Expression expression = new ExpressionBuilder(result).build();
-            double preResult = expression.evaluate();
+            float preResult = (float) expression.evaluate();
             if (preResult == (int) preResult) {
                 return (int) preResult;
             } else {

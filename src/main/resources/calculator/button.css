@@ -1,11 +1,11 @@
 .button {
-    -fx-base: #0C200B;
+    -fx-base: #1b262a;
     -fx-background-radius: 10;
-    -fx-border-color: #50964C;
+    -fx-border-color: #0dc3b7;
     -fx-border-radius: 10;
     -fx-border-width: 2;
 }
 
 .button:hover {
-    -fx-base: #031C02;
+    -fx-base: #1b262a;
 }

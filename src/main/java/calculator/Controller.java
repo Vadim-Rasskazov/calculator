@@ -12,7 +12,7 @@ public class Controller {
     private AnchorPane rootPane;
 
     @FXML
-    private TextField input;
+    private TextField calc, input;
 
     @FXML
     private Button divide, multiply, minus, plus, root, square, dot, lbracket, rbracket, pi, log, ln;
@@ -167,15 +167,18 @@ public class Controller {
     private void onClearButtonClick() {
         calculate.userData.clear();
         calculate.calculationData.clear();
-        input.setText(calculate.userResult(calculate.userData));
+        calc.setText("");
+        input.setText("");
     }
 
     private void onEqualButtonClick() {
         Object result = calculate.calculationResult(calculate.calculationData);
-        onClearButtonClick();
         if (result == null) {
             input.setText("");
         } else {
+            calc.setText(calculate.userString(calculate.userData)+"=");
+            calculate.userData.clear();
+            calculate.calculationData.clear();
             calculate.userData.add(result);
             calculate.calculationData.add(result);
             input.setText(result.toString());
